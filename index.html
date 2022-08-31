@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+ <meta charset="UTF-8">
+ <title>My very first website</title>
+ <style>
+ .middle {
+   background: aqua;
+ }
+ #sky {
+   position: relative;
+   width: 100vw;
+   height: 100vh;
+ }
+ img.glitter-star {
+   position: absolute;
+   height: 16px;
+   width: 16px;
+   animation: glitter 2s linear 0s infinite normal;
+   -ms-animation: glitter 2s linear 0s infinite normal;
+   -webkit-animation: glitter 2s linear 0s infinite normal;
+   -moz-animation: glitter 2s linear 0s infinite normal;
+ }
+ 
+ @keyframes glitter {
+   0% {
+   -webkit-transform: scale(3.0);
+   opacity: 1;
+   }
+   25% {
+   -webkit-transform: scale(0.5);
+   opacity: 0;
+   }
+   50% {
+   -webkit-transform: scale(2.0);
+   opacity: 1;
+   }
+   75% {
+   -webkit-transform: scale(0.5);
+   opacity: 0;
+   }
+   100% {
+   -webkit-transform: scale(3.0);
+   opacity: 1;
+   }
+ }
+ .image {
+                width: 350px;
+                border: 6px double brown;
+                margin: 15px;
+				background-color: brown;
+				float: left;
+            }
+ .text {
+   
+ }
+ .sky {
+   
+ }
+ </style>
+</head>
+
+
+<body>
+ <h1>Facts About <i>George Washington</i></h1>
+ <section>
+ <div class="middle">
+ <img class="image" src="images/george washington.jpg">
+ <br>
+ <h4 class="text">Here are some facts about <i>George Washington</i></h4>
+ <br>
+ <ul class="text">
+  <p>George Washington's first carrer was a surveyor.</p>
+  <p>George Washington was mostly self-educated.</p>
+  <p>George Washington was fearless in battle</p>
+  <p>Washington’s bold actions saved the American Revolution, twice</p>
+  <p>He never abused power</p>
+  <p>Washington owned more than 50,000 acres and was an ardent promoter of westward expansion</p>
+  <p>Washington loved parties and the company of women</p>
+  <p>Washington was the first to sign the United States Constitution</p>
+  <p>He was unanimously elected president, twice</p>
+  <p>Washington was a true agricultural innovator and pioneer</p>
+  <p>Washington is the only slave-owning president who freed all of his slaves</p>
+ </div>
+ <div id="sky">
+ </div>
+ <script>
+ const sky = document.getElementById("sky");
+ const randomNumber = function randomNumber() {
+ let r = 50;
+ while (40 < r && r < 60) {
+   r = Math.random() * 100
+   }
+   return r;
+   }
+   for (let i = 0; i < 50; i++) {
+     const delay = Math.random() + "s";
+	 const el = document.createElement("img");
+	 el.src = "images/george washington.jpg";
+	 el.className = "glitter-star";
+	 el.style.top = randomNumber() + "%";
+	 el.style.left = randomNumber() + "%";
+	 el.style.animationDelay = delay;
+	 el.style.msAnimationDelay = delay;
+	 el.style.webkitAnimationDelay = delay;
+	 el.style.mozAnimationDelay = delay;
+	 sky.appendChild(el)
+   }
+ </script>
+ </section>
+</body>
+
+</html>
